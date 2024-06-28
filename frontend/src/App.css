@@ -5,3 +5,22 @@
     font-family: 'Trebuchet MS', 'Lucida Grande', Arial, sans-serif;
 }
 
+/*伪类消除子容器因为marginTop 导致父类设置背景 会有空白断层的出现*/
+.App:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -100%;
+    right: -100%;
+
+    bottom: -15px;
+    background-color: #fffde7;
+    z-index: -1;
+    box-sizing: border-box;
+
+}
+
+.AppContainer {
+    height: 100vh;
+    background-color: #fffde7;
+}

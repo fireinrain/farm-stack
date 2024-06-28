@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
     return (
-        <div className="App">
+        <div className="AppContainer">
             <div className="App list-group-item justify-content-center align-items-center mx-auto"
                  style={{width: "600px", background: "white", marginTop: "15px"}}>
                 <h1 className="card text-white bg-primary mb-1" style={{maxWidth: "60rem"}}>Task Manager</h1>
