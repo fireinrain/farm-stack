@@ -16,17 +16,18 @@ collection = database.todo
 
 
 async def fetch_one_todo(title: str):
-    document = await collection.find_one(title=title)
+    query_filter = {"title": title}
+    document = await collection.find_one(query_filter)
     return document
 
 
 async def fetch_all_todos():
     todos = []
-    cursor = await collection.find({})
+    cursor = collection.find({})
     # 获取所有文档列表
-    # documents = await cursor.to_list(length=None)  # length=None 表示获取所有文档
-    async for document in cursor:
-        todos.append(**document)
+    documents = await cursor.to_list(length=None)  # length=None 表示获取所有文档
+    for document in documents:
+        todos.append(Todo(**document))
     return todos
 
 
