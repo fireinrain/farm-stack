@@ -13,7 +13,9 @@ from model import Todo
 
 app = FastAPI()
 
-origins = ['https://localhost:3000']
+# origins = ['http://localhost:3000']
+# 请求跨域设置
+origins = ['*']
 
 app.add_middleware(CORSMiddleware,
                    allow_origins=origins,
